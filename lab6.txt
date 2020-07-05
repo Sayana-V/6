@@ -1,0 +1,54 @@
+<!DOCTYPE HTML>
+
+<html>
+
+	<body>
+	
+		<input type=button value=Начать id="firstbutton" onclick = start()>
+		
+		<form onsubmit="empty()" id="buttonform"></form>
+	
+		<script>
+			function start() {
+				
+				firstbutton.onclick = null;
+			
+				buttonform.innerHTML += "<br><br>" + "Введите ФИО: " + "<br>";
+				
+				let input0 = document.createElement("input");
+				input0.type = "text";
+				buttonform.append(input0);
+				
+				buttonform.innerHTML += "<br><br>" + "Введите дату рождения: " + "<br>";
+			
+				let input3 = document.createElement("input");
+				input3.type = "date";
+				buttonform.append(input3);
+				
+				buttonform.innerHTML += "<br><br>" + "Введите любимое число: " + "<br>";
+			
+				let input4 = document.createElement("input");
+				input4.type = "number";
+				buttonform.append(input4);
+				
+				buttonform.innerHTML += "<br><br><br>";
+				
+				let input1 = document.createElement("input");
+				input1.type = "submit";
+				buttonform.append(input1);
+
+			};
+			
+			function empty() {
+				if (document.forms[0].elements[0].value) {alert(document.forms[0].elements[0].value)} else {alert("Поле №1 не заполнено")};
+				
+				if (document.forms[0].elements[1].value) {alert(document.forms[0].elements[1].value)} else {alert("Поле №2 не заполнено")};
+				
+				if (document.forms[0].elements[2].value) {alert(document.forms[0].elements[2].value)} else {alert("Поле №3 не заполнено")};
+			};
+			
+		</script>
+		
+	</body>
+
+</html>
